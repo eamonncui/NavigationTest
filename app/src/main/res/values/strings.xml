@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">NavigationTest</string>
+
+    <string name="title_navigation1">Navigation1Fragment</string>
+    <string name="title_navigation2">Navigation2Fragment</string>
+    <string name="title_navigation3">Navigation3Fragment</string>
+
+    <string name="btn_toNavigation3">go to Navigation3</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
