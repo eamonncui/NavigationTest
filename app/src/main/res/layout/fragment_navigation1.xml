@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Navigation1Fragment">
+    tools:context=".main.Navigation1Fragment">
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,4 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="go to Navigation2 byDeepLink"/>
+
+    <Button
+        android:id="@+id/btn_toSubNavigation_graph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to sub navigate graph"/>
 </LinearLayout>

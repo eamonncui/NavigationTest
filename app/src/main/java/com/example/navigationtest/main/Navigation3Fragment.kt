@@ -1,4 +1,4 @@
-package com.example.navigationtest
+package com.example.navigationtest.main
 
 import android.content.Context
 import android.net.Uri
@@ -8,7 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import kotlinx.android.synthetic.main.fragment_navigation2.*
+import com.example.navigationtest.R
+import kotlinx.android.synthetic.main.fragment_navigation3.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -19,13 +20,13 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [Navigation2Fragment.OnFragmentInteractionListener] interface
+ * [Navigation3.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [Navigation2Fragment.newInstance] factory method to
+ * Use the [Navigation3.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class Navigation2Fragment : Fragment() {
+class Navigation3Fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -42,11 +43,15 @@ class Navigation2Fragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navigation2, container, false)
+        return inflater.inflate(R.layout.fragment_navigation3, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        btn_toNavigation3.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_navigation2Fragment_to_navigation3Fragment))
+        btn_toNavigation1.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_navigation3Fragment_to_navigation1Fragment))
+        //after a1-b1-c1-a2-b2, click button, back stack = a1
+        btn_popUpTo_and_popUpTo.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_navigation3Fragment_popup_navigation1Fragment, null))
+        //after a1-b1-c1-a2-b2, click button, back stack = null
+        btn_popUpTo_and_popUpToInclusive.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_navigation3Fragment_popupto_navigation1Fragment, null))
         super.onViewCreated(view, savedInstanceState)
     }
 
@@ -92,12 +97,12 @@ class Navigation2Fragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Navigation2Fragment.
+         * @return A new instance of fragment Navigation3.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-                Navigation2Fragment().apply {
+                Navigation3Fragment().apply {
                     arguments = Bundle().apply {
                         putString(ARG_PARAM1, param1)
                         putString(ARG_PARAM2, param2)

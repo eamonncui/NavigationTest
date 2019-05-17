@@ -1,8 +1,10 @@
-package com.example.navigationtest;
+package com.example.navigationtest.main;
 
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.navigationtest.R;
 
 import org.jetbrains.annotations.NotNull;
 

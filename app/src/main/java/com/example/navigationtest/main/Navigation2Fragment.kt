@@ -1,4 +1,4 @@
-package com.example.navigationtest
+package com.example.navigationtest.main
 
 import android.content.Context
 import android.net.Uri
@@ -8,8 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import androidx.navigation.Navigation.findNavController
-import kotlinx.android.synthetic.main.fragment_navigation1.*
+import com.example.navigationtest.R
+import kotlinx.android.synthetic.main.fragment_navigation2.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -20,13 +20,13 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [Navigation1Fragment.OnFragmentInteractionListener] interface
+ * [Navigation2Fragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [Navigation1Fragment.newInstance] factory method to
+ * Use the [Navigation2Fragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class Navigation1Fragment : Fragment() {
+class Navigation2Fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -43,7 +43,12 @@ class Navigation1Fragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navigation1, container, false)
+        return inflater.inflate(R.layout.fragment_navigation2, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        btn_toNavigation3.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_navigation2Fragment_to_navigation3Fragment))
+        super.onViewCreated(view, savedInstanceState)
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -58,11 +63,6 @@ class Navigation1Fragment : Fragment() {
         } else {
             throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        btn_toNavigation2_byId.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_navigation1Fragment_to_navigation2Fragment, null))
-        super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onDetach() {
@@ -93,12 +93,12 @@ class Navigation1Fragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Navigation1Fragment.
+         * @return A new instance of fragment Navigation2Fragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-                Navigation1Fragment().apply {
+                Navigation2Fragment().apply {
                     arguments = Bundle().apply {
                         putString(ARG_PARAM1, param1)
                         putString(ARG_PARAM2, param2)

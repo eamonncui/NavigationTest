@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sub_navigation_graph"
+    app:startDestination="@id/subNavigation1Fragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/subNavigation1Fragment"
+        android:name="com.example.navigationtest.sub.SubNavigation1Fragment"
+        android:label="fragment_sub_navigation1"
+        tools:layout="@layout/fragment_sub_navigation1">
+        <action
+            android:id="@+id/action_subNavigation1Fragment_to_subNavigation2Fragment"
+            app:destination="@id/subNavigation2Fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/subNavigation2Fragment"
+        android:name="com.example.navigationtest.sub.SubNavigation2Fragment"
+        android:label="fragment_sub_navigation2"
+        tools:layout="@layout/fragment_sub_navigation2">
+        <action
+            android:id="@+id/action_subNavigation2Fragment_to_Navigation1Fragment"
+            app:popUpTo="@id/navigation1Fragment" />
+    </fragment>
+</navigation>
