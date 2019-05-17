@@ -6,6 +6,10 @@
     app:startDestination="@id/subNavigation1Fragment"
     tools:ignore="UnusedNavigation">
 
+    <action android:id="@+id/action_pop_to_main_navigation1Fragment"
+        app:popUpTo="@id/navigation1Fragment"
+        app:popUpToInclusive="true"  />
+
     <fragment
         android:id="@+id/subNavigation1Fragment"
         android:name="com.example.navigationtest.sub.SubNavigation1Fragment"

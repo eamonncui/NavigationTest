@@ -43,6 +43,7 @@ class SubNavigation1Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         btn_toSubNavigation2.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_subNavigation1Fragment_to_subNavigation2Fragment))
+        btn_toNavigation1.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_pop_to_main_navigation1Fragment))
         super.onViewCreated(view, savedInstanceState)
     }
 
