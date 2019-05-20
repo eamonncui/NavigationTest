@@ -3,7 +3,7 @@ package com.example.navigationtest.main
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +26,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  *
  */
-class Navigation1Fragment : Fragment() {
+class Navigation1Fragment : androidx.fragment.app.Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -63,6 +63,7 @@ class Navigation1Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         btn_toNavigation2_byId.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_navigation1Fragment_to_navigation2Fragment, null))
         btn_toSubNavigation_graph.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_navigation1Fragment_to_sub_navigation_graph))
+        btn_toPassData.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_navigation1Fragment_to_passDataFragment) }
         super.onViewCreated(view, savedInstanceState)
     }
 

@@ -1,4 +1,4 @@
-package com.example.navigationtest.sub
+package com.example.navigationtest.main
 
 
 import android.os.Bundle
@@ -6,9 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
 import com.example.navigationtest.R
-import kotlinx.android.synthetic.main.fragment_sub_navigation1.*
+import kotlinx.android.synthetic.main.fragment_receive_data.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -18,11 +17,13 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [SubNavigation1Fragment.newInstance] factory method to
+ * Use the [ReceiveDataFragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class SubNavigation1Fragment : androidx.fragment.app.Fragment() {
+class ReceiveDataFragment : androidx.fragment.app.Fragment() {
+
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -38,15 +39,15 @@ class SubNavigation1Fragment : androidx.fragment.app.Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sub_navigation1, container, false)
+        return inflater.inflate(R.layout.fragment_receive_data, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        btn_toNavigation1.setOnClickListener { view1 -> Navigation.findNavController(view1).navigate(R.id.action_pop_to_main_navigation1Fragment) }
-        btn_toSubNavigation2.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_subNavigation1Fragment_to_subNavigation2Fragment))
+        tv_receivedata_bundle.text = arguments?.get(ARG_PARAM1).toString()
+        tv_receivedata_safeArg.text = arguments?.let { ReceiveDataFragmentArgs.fromBundle(it).string1 }
+        tv_receivedata_safeArg_defaultValue.text = arguments?.let { ReceiveDataFragmentArgs.fromBundle(it).string1 }
         super.onViewCreated(view, savedInstanceState)
     }
-
 
     companion object {
         /**
@@ -55,12 +56,12 @@ class SubNavigation1Fragment : androidx.fragment.app.Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment SubNavigation1Fragment.
+         * @return A new instance of fragment ReceiveDataFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-                SubNavigation1Fragment().apply {
+                ReceiveDataFragment().apply {
                     arguments = Bundle().apply {
                         putString(ARG_PARAM1, param1)
                         putString(ARG_PARAM2, param2)

@@ -4,35 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".main.Navigation1Fragment">
+    tools:context=".main.PassDataFragment">
 
+    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_navigation1" />
+        android:text="@string/hello_blank_fragment" />
 
     <Button
-        android:id="@+id/btn_toNavigation2_byId"
+        android:id="@+id/btn_passData_bundle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="go to Navigation2 byID"/>
-
-
-    <Button
-        android:id="@+id/btn_toNavigation2_byDeepLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="go to Navigation2 byDeepLink"/>
+        android:text="passData by bundle"/>
 
     <Button
-        android:id="@+id/btn_toSubNavigation_graph"
+        android:id="@+id/btn_passData_safeArg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="go to sub navigate graph"/>
+        android:text="passData by safeArg"/>
 
     <Button
-        android:id="@+id/btn_toPassData"
+        android:id="@+id/btn_passData_safeArg_defaultValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="go to pass data section"/>
+        android:text="passData by safeArg"/>
 </LinearLayout>

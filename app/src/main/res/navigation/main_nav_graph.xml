@@ -10,12 +10,18 @@
         android:name="com.example.navigationtest.main.Navigation1Fragment"
         android:label="fragment_navigation1"
         tools:layout="@layout/fragment_navigation1">
+
         <action
             android:id="@+id/action_navigation1Fragment_to_navigation2Fragment"
             app:destination="@id/navigation2Fragment" />
+
         <action
             android:id="@+id/action_navigation1Fragment_to_sub_navigation_graph"
             app:destination="@id/sub_navigation_graph" />
+
+        <action
+            android:id="@+id/action_navigation1Fragment_to_passDataFragment"
+            app:destination="@id/passDataFragment" />
     </fragment>
 
     <fragment
@@ -23,6 +29,7 @@
         android:name="com.example.navigationtest.main.Navigation2Fragment"
         android:label="fragment_navigation2"
         tools:layout="@layout/fragment_navigation2">
+
         <action
             android:id="@+id/action_navigation2Fragment_to_navigation3Fragment"
             app:destination="@id/navigation3Fragment" />
@@ -33,6 +40,7 @@
         android:name="com.example.navigationtest.main.Navigation3Fragment"
         android:label="fragment_navigation3"
         tools:layout="@layout/fragment_navigation3">
+
         <action
             android:id="@+id/action_navigation3Fragment_to_navigation1Fragment"
             app:destination="@id/navigation1Fragment"
@@ -51,4 +59,41 @@
     </fragment>
 
     <include app:graph="@navigation/sub_navigation_graph" />
+
+    <fragment
+        android:id="@+id/passDataFragment"
+        android:name="com.example.navigationtest.main.PassDataFragment"
+        android:label="fragment_pass_data"
+        tools:layout="@layout/fragment_pass_data">
+        <action
+            android:id="@+id/action_passDataFragment_to_receiveDataFragment"
+            app:destination="@id/receiveDataFragment">
+            <argument
+                android:name="string1"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/receiveDataFragment"
+        android:name="com.example.navigationtest.main.ReceiveDataFragment"
+        android:label="fragment_receive_data"
+        tools:layout="@layout/fragment_receive_data">
+
+        <argument
+            android:name="string1"
+            android:defaultValue="aaa"
+            app:argType="string" />
+
+        <!--<argument-->
+        <!--android:name="string2"-->
+        <!--app:argType="string" />-->
+
+        <!--<argument-->
+        <!--android:name="person"-->
+        <!--app:argType="com.example.navigationtest.model.Person" />-->
+
+    </fragment>
 </navigation>
