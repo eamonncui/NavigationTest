@@ -13,7 +13,11 @@
 
         <action
             android:id="@+id/action_navigation1Fragment_to_navigation2Fragment"
-            app:destination="@id/navigation2Fragment" />
+            app:destination="@id/navigation2Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"/>
 
         <action
             android:id="@+id/action_navigation1Fragment_to_sub_navigation_graph"
@@ -22,6 +26,11 @@
         <action
             android:id="@+id/action_navigation1Fragment_to_passDataFragment"
             app:destination="@id/passDataFragment" />
+
+        <action
+            android:id="@+id/action_navigation1Fragment_to_sharedElementFragment"
+            app:destination="@id/sharedElementFragment" />
+
     </fragment>
 
     <fragment
@@ -96,4 +105,9 @@
         <!--app:argType="com.example.navigationtest.model.Person" />-->
 
     </fragment>
+    <fragment
+        android:id="@+id/sharedElementFragment"
+        android:name="com.example.navigationtest.main.SharedElementFragment"
+        android:label="fragment_shared_element"
+        tools:layout="@layout/fragment_shared_element" />
 </navigation>

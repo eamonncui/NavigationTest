@@ -6,6 +6,7 @@
     <string name="title_navigation3">Navigation3Fragment</string>
     <string name="title_sub_navigation1">SubNavigation1Fragment</string>
     <string name="title_sub_navigation2">SubNavigation2Fragment</string>
+    <string name="title_share_element">SharedElementFragment</string>
 
     <string name="btn_toNavigation3">go to Navigation3</string>
 

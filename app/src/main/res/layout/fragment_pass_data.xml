@@ -28,5 +28,5 @@
         android:id="@+id/btn_passData_safeArg_defaultValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="passData by safeArg"/>
+        android:text="passData by safeArg defaultValue"/>
 </LinearLayout>

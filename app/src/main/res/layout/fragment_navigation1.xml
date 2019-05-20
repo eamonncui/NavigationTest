@@ -35,4 +35,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="go to pass data section"/>
+
+    <Button
+        android:id="@+id/btn_toShareElement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to ShareElement"/>
 </LinearLayout>

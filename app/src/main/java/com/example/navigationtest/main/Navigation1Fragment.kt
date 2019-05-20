@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.FragmentNavigator
 import com.example.navigationtest.R
 import kotlinx.android.synthetic.main.fragment_navigation1.*
 
@@ -64,6 +65,16 @@ class Navigation1Fragment : androidx.fragment.app.Fragment() {
         btn_toNavigation2_byId.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_navigation1Fragment_to_navigation2Fragment, null))
         btn_toSubNavigation_graph.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_navigation1Fragment_to_sub_navigation_graph))
         btn_toPassData.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_navigation1Fragment_to_passDataFragment) }
+        val extras = FragmentNavigator.Extras.Builder()
+                .addSharedElement(btn_toNavigation2_byId, "btn_toNavigation2_byId")
+                .addSharedElement(btn_toSubNavigation_graph, "btn_toSubNavigation_graph")
+                .addSharedElement(btn_toPassData, "btn_toPassData")
+                .build()
+        btn_toShareElement.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_navigation1Fragment_to_sharedElementFragment, null, // Bundle of args
+                    null,
+                    extras)
+        }
         super.onViewCreated(view, savedInstanceState)
     }
 
